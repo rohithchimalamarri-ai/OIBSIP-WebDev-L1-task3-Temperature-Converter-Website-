@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="converter-card">
+        <header class="card-header">
+            <div class="icon-wrapper">
+                <i class="fa-solid fa-temperature-half"></i>
+            </div>
+            <h1>Temperature Converter</h1>
+            <p>Convert seamlessly between Celsius, Fahrenheit, and Kelvin</p>
+        </header>
+
+        <form id="converter-form" novalidate>
+            <!-- Input Field -->
+            <div class="form-group">
+                <label for="temperature-input">Degrees / Value</label>
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="temperature-input" 
+                        placeholder="Enter value (e.g. 25)" 
+                        autocomplete="off"
+                    >
+                    <i class="fa-solid fa-hashtag input-icon"></i>
+                </div>
+                <!-- Validation & Absolute Zero Error Message -->
+                <p id="error-message" class="error-message" aria-live="polite"></p>
+            </div>
+
+            <!-- Unit Selector -->
+            <div class="form-group">
+                <label for="unit-select">From Unit</label>
+                <div class="select-wrapper">
+                    <select id="unit-select">
+                        <option value="celsius">Celsius (°C)</option>
+                        <option value="fahrenheit">Fahrenheit (°F)</option>
+                        <option value="kelvin">Kelvin (K)</option>
+                    </select>
+                    <i class="fa-solid fa-chevron-down select-icon"></i>
+                </div>
+            </div>
+
+            <!-- Convert Button -->
+            <button type="submit" id="convert-btn" class="convert-btn">
+                <i class="fa-solid fa-calculator"></i> Convert Now
+            </button>
+        </form>
+
+        <!-- Output Cards Display Area -->
+        <section class="results-section" aria-label="Conversion Results">
+            <h2 class="results-title">Converted Values</h2>
+            
+            <div class="results-grid">
+                <!-- Celsius Output Card -->
+                <div class="result-card" id="card-celsius">
+                    <span class="unit-label">Celsius</span>
+                    <span class="unit-value" id="res-celsius">--</span>
+                    <span class="unit-symbol">°C</span>
+                </div>
+
+                <!-- Fahrenheit Output Card -->
+                <div class="result-card" id="card-fahrenheit">
+                    <span class="unit-label">Fahrenheit</span>
+                    <span class="unit-value" id="res-fahrenheit">--</span>
+                    <span class="unit-symbol">°F</span>
+                </div>
+
+                <!-- Kelvin Output Card -->
+                <div class="result-card" id="card-kelvin">
+                    <span class="unit-label">Kelvin</span>
+                    <span class="unit-value" id="res-kelvin">--</span>
+                    <span class="unit-symbol">K</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
